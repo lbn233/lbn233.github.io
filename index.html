@@ -3,83 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#f6f7f3">
-  <meta name="description" content="二分答案与分治算法练习，专注解决值得思考的问题。">
-  <title>思维练习 OJ</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>正在打开 Hydro 题库</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f5f7f4;color:#182b24;font:16px/1.7 system-ui,-apple-system,"Microsoft YaHei",sans-serif}.card{width:min(500px,calc(100% - 40px));padding:44px;background:white;border:1px solid #e0e9e2;border-radius:20px;box-shadow:0 20px 50px #253d2b0a}h1{margin:0 0 12px;font-size:28px;letter-spacing:-.04em}p{color:#64796b;margin:0 0 20px}a{display:inline-block;padding:10px 18px;border-radius:10px;background:#24583d;color:white;text-decoration:none;font-weight:600}.note{font-size:13px;margin:22px 0 0;color:#829386}
+  </style>
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar" aria-label="题目导航">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
-        <span class="brand-text"><strong>思维练习</strong><small>ALGORITHM STUDIO</small></span>
-      </div>
-      <div class="side-caption"><span>学习空间</span><span class="side-caption-line"></span></div>
-      <label class="side-search"><span aria-hidden="true">⌕</span><input id="problem-search" type="search" placeholder="搜索题目或编号" aria-label="搜索题目或编号"></label>
-      <button type="button" class="side-home active" id="home-button">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h6.5v6.5H4zM13.5 5.5H20V12h-6.5zM4 15h6.5v4H4zM13.5 15H20v4h-6.5z"/></svg>
-        <span>全部题目</span><span class="side-count" id="side-count">06</span>
-      </button>
-      <div class="side-section-title">练习专题 <span>01 / 02</span></div>
-      <div id="side-problems" class="side-problems"><div class="side-loading">正在加载题目…</div></div>
-      <div class="sidebar-footer">
-        <div class="side-progress-top"><span>练习进度</span><strong id="side-progress">0 / 6</strong></div>
-        <div class="progress-track"><div id="side-progress-bar"></div></div>
-        <p>每一道题，都是一次新思考。</p>
-      </div>
-    </aside>
-
-    <main class="main" id="main-content">
-      <header class="topbar">
-        <div class="breadcrumbs"><span>练习空间</span><span class="crumb-sep">/</span><span>题库</span><span class="crumb-sep">/</span><strong id="crumb-current">B1</strong></div>
-        <div class="topbar-right"><span class="topbar-dot"></span><span>专注练习</span><span class="topbar-divider"></span><span class="topbar-count" id="topbar-count">0 / 6 已完成</span><div class="avatar" aria-label="个人练习空间">你</div></div>
-      </header>
-
-      <div class="mobile-brand"><span class="mobile-brand-mark">✳</span><strong>思维练习</strong><span>ALGORITHM STUDIO</span></div>
-      <section class="workspace">
-        <div class="workspace-header">
-          <div>
-            <div class="eyebrow"><span class="eyebrow-icon">✦</span> PRACTICE COLLECTION <span class="eyebrow-line"></span> 01</div>
-            <h1>把思路，<span>变成答案。</span></h1>
-            <p class="workspace-subtitle">二分答案与分治 · 练习拆解复杂问题</p>
-          </div>
-          <div class="collection-stat"><span>COLLECTION</span><strong><span id="collection-count">06</span> <small>题</small></strong><div class="stat-caption">一题一解，慢慢来 <span>↗</span></div></div>
-        </div>
-
-        <div class="mobile-selector"><label for="mobile-problem">选择题目</label><select id="mobile-problem" aria-label="选择题目"></select></div>
-        <div class="workspace-grid">
-          <section class="problem-card" aria-labelledby="problem-title">
-            <div class="card-topline"><div class="section-kicker"><span class="kicker-square"></span> PROBLEM <span class="kicker-slash">/</span> <span id="problem-number">01</span></div><div class="problem-category" id="problem-category">二分答案</div></div>
-            <div class="problem-heading"><div><div class="problem-id-line"><span id="problem-id">B1</span><span class="id-line"></span><span id="problem-theme">答案搜索</span></div><h2 id="problem-title">正在加载题目…</h2></div><span id="problem-status" class="status-pill"><span></span> 未完成</span></div>
-            <div class="problem-divider"></div>
-            <div class="problem-body" id="problem-body"><p class="loading-message">正在准备题目内容。</p></div>
-          </section>
-
-          <section class="editor-card" aria-labelledby="editor-title">
-            <div class="editor-card-head"><div><div class="editor-kicker"><span></span> CODING SPACE</div><h2 id="editor-title">开始解题</h2><p>写下你的思路，提交后查看结果。</p></div><div class="terminal-icon" aria-hidden="true">&gt;_</div></div>
-            <div class="editor-controls"><label for="language">语言</label><select id="language" aria-label="选择编程语言"><option value="cpp">C++17</option><option value="python">Python 3</option></select><span class="save-indicator"><span></span> 已自动保存</span></div>
-            <div class="code-shell"><div class="code-topbar"><div class="window-dots"><i></i><i></i><i></i></div><span id="code-filename">solution.cpp</span><span class="code-topbar-right">EDITOR</span></div><div class="code-area"><div class="line-numbers" id="line-numbers" aria-hidden="true">1\n2\n3\n4\n5\n6\n7\n8\n9\n10</div><textarea id="editor" aria-label="代码编辑器" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea></div><div class="code-footer"><span>你的代码保存在此浏览器中</span><span>UTF-8</span></div></div>
-            <div class="submit-row"><span class="keyboard-hint"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> 提交</span><button id="submit-button" class="submit-button" type="button"><span class="submit-icon">↗</span><span id="submit-label">提交评测</span></button></div>
-            <div class="judge-connection" role="status" aria-live="polite">
-              <span id="judge-status-dot" class="judge-status-dot pending" aria-hidden="true"></span>
-              <span id="judge-status-label">正在检测本地评测机…</span>
-              <button id="judge-recheck" type="button">重新检测</button>
-            </div>
-            <p class="service-note">提交的代码只发送到这台电脑上的 WSL 评测机。请先启动评测机；代码和进度保存在当前浏览器中。</p>
-            <details class="judge-help"><summary>如何启动本地评测机？</summary><div>在 WSL 里进入题库仓库，然后运行：<pre>python3 judge-server.py</pre><p>启动后回到此页面点击“重新检测”。详细安装及安全说明见 <a href="https://github.com/lbn233/lbn233.github.io#评测机" target="_blank" rel="noopener noreferrer">仓库使用说明</a>。</p></div></details>
-            <div class="results-header"><div><span class="result-title">评测结果</span><span class="result-en">RESULTS</span></div><span class="result-pill" id="result-pill">等待提交</span></div>
-            <div class="result-box" id="result-box" role="status" aria-live="polite"><div class="result-empty-icon">⌁</div><div><strong>还没有提交记录</strong><p>准备好后，提交代码查看评测结果。</p></div></div>
-            <div id="history-wrap" class="history-wrap" hidden><div class="history-title">最近提交 <button type="button" id="clear-history">清空</button></div><div id="history-list"></div></div>
-          </section>
-        </div>
-        <footer class="footer"><span>思维练习 OJ <span class="footer-sep">/</span> 一步一步，想清楚。</span><span>BUILT FOR THINKING <span class="footer-mark">✳</span></span></footer>
-      </section>
-    </main>
-  </div>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="./judge.js" defer></script>
-  <script src="./app.js" defer></script>
+  <main class="card">
+    <h1>正在打开 Hydro 题库</h1>
+    <p>题库和评测服务运行在这台电脑的 WSL 中。</p>
+    <a href="http://127.0.0.1:8888/">进入本机题库</a>
+    <p class="note">如果没有自动跳转，请点击上方按钮，并确认本机服务已经启动。</p>
+  </main>
+  <script>window.location.replace('http://127.0.0.1:8888/');</script>
 </body>
 </html>

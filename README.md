@@ -1,27 +1,11 @@
-# 思维练习 OJ
+# Hydro 个人题库入口
 
-题库网站：https://lbn233.github.io/
+访问 https://lbn233.github.io/ 会跳转到本机的 Hydro：`http://127.0.0.1:8888/`。Hydro 的网页服务、数据库和评测机运行在这台电脑的 Ubuntu WSL 中，所以做题时这台电脑需要开机，WSL 服务需要运行。
 
-这是一个个人算法练习站，包含二分答案和分治题。网站由 GitHub Pages 提供；代码在当前电脑的 WSL 中编译和评测，不发送到第三方评测服务。
+## 日常使用
 
-## 评测机
+使用自己的 Hydro 账号登录，在题库中查看题目并提交代码。需要新增或修改题目时，可使用 Hydro 的管理员界面。
 
-在安装了 Python 3、g++、bubblewrap 和 prlimit 的 Ubuntu WSL 中，进入本仓库目录并运行：
+该仓库由 GitHub Pages 提供静态入口；Hydro 题目、测试数据、账号和提交记录保存在本机 WSL 的数据目录，不会因为修改 GitHub 仓库而自动同步，也不会自动备份到 GitHub。请定期单独备份本机 Hydro 数据。仓库中旧版 `problems.json` 和 `tests.json` 只代表此前静态题库的快照，不是当前 Hydro 数据库。
 
-```sh
-python3 judge-server.py
-```
-
-在 Windows 中，也可以从仓库目录运行 `powershell -NoProfile -File .\start-judge.ps1`，由脚本启动 Ubuntu WSL 中的评测机。
-
-评测机只监听本机 `127.0.0.1:8766`。打开题库后，页面会检测本机评测机；如浏览器请求本地网络访问权限，请按浏览器提示操作。换一台电脑使用题库时，需在那台电脑上启动评测机。
-
-评测使用 bubblewrap 隔离编译和运行，并设置时间、输出和资源限制。测试数据随仓库公开，适合个人练习，不是隐藏测试或比赛防作弊系统。
-
-## 更新题目
-
-- `problems.json` 保存题目、输入输出格式和公开样例。
-- `tests.json` 按题目编号保存评测数据；修改题目时请同步更新测试点和标准输出。
-- `judge-server.py` 是本机评测服务，`index.html`、`style.css`、`app.js` 和 `judge.js` 是网页文件。
-
-将更新提交到本仓库的 `main` 分支后，GitHub Pages 会重新发布网页。在本机工作副本中同步更新并重启评测服务，才能让本机判题使用更新后的测试数据。
+当前配置面向这台电脑上的个人练习。若在另一台设备上打开此入口，它会尝试连接那台设备自己的本机地址，需要在那台设备上另行部署 Hydro 才能使用。
